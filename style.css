@@ -1,0 +1,284 @@
+@font-face {
+  font-family: "poppins";
+  font-weight: 700;
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 700;
+  font-style: italic;
+  src: url(./assets/fonts/Poppins-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 800;
+  src: url(./assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 800;
+  font-style: italic;
+  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 400;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  font-weight: 400;
+  font-style: italic;
+  src: url(./assets/fonts/Poppins-Italic.ttf);
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --clr-purple: hsl(259, 100%, 65%);
+  --clr-light-red: hsl(0, 100%, 67%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-off-white: hsl(0, 0%, 94%);
+  --clr-light-grey: hsl(0, 0%, 86%);
+  --clr-smokey-grey: hsl(0, 1%, 44%);
+  --clr-off-black: hsl(0, 0%, 8%);
+}
+
+/* || RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* || GENERAL STYLES */
+html {
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  align-items: center;
+  background-color: var(--clr-off-white);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--clr-white);
+  border-radius: 20px 20px 100px 20px;
+  flex: 1;
+  margin-inline: 1rem;
+  max-width: 39.5rem;
+  padding: 2.95rem 1.45rem;
+}
+
+.inputs {
+  align-items: start;
+  column-gap: 1rem;
+  display: flex;
+  justify-content: start;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.3rem;
+}
+
+label {
+  color: var(--clr-smokey-grey);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.wrong label {
+  color: var(--clr-light-red);
+}
+
+input {
+  all: unset;
+  border-radius: 5px;
+  border: 1px solid var(--clr-light-grey);
+  box-sizing: border-box;
+  color: var(--clr-off-black);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.wrong input {
+  border: 1px solid var(--clr-light-red);
+}
+
+input::placeholder {
+  color: var(--clr-smokey-grey);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  border: 1px solid var(--clr-off-black);
+}
+
+.wrong input:focus {
+  border: 1px solid var(--clr-light-red);
+}
+
+.wrong .error {
+  color: var(--clr-light-red);
+  font-size: 0.6rem;
+}
+
+.btn {
+  display: grid;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  place-content: center;
+  position: relative;
+}
+
+.calcul-btn {
+  all: unset;
+  align-content: center;
+  background-color: var(--clr-purple);
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  width: 4rem;
+  z-index: 1;
+}
+
+.calcul-btn:hover {
+  background-color: var(--clr-off-black);
+  cursor: pointer;
+}
+
+.arrow-icon {
+  display: block;
+  height: auto;
+  width: 50%;
+}
+
+.bar {
+  background-color: var(--clr-light-grey);
+  height: 1.5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.age {
+  color: var(--clr-off-black);
+  font-size: 3.4rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.1;
+  word-spacing: -0.28rem;
+}
+
+.age span {
+  color: var(--clr-purple);
+}
+
+@media screen and (max-width: 360px) {
+  label {
+    font-size: 0.7rem;
+  }
+
+  input {
+    font-size: 1rem;
+  }
+
+  input::placeholder {
+    font-size: 0.85rem;
+  }
+
+  .wrong .error {
+    font-size: 0.6rem;
+  }
+
+  .btn {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  .calcul-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .age {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    border-bottom-right-radius: 150px;
+    padding: 2.5rem 2.65rem;
+  }
+
+  .inputs {
+    column-gap: 1.5rem;
+  }
+
+  .container {
+    row-gap: 0.15rem;
+  }
+
+  label {
+    font-size: 0.7rem;
+  }
+
+  input {
+    font-size: 1.5rem;
+    max-width: 7.5rem;
+  }
+
+  input::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .wrong .error {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    display: grid;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    place-content: center end;
+  }
+
+  .calcul-btn {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .age {
+    font-size: 4.9rem;
+    word-spacing: -0.8rem;
+  }
+}
